@@ -24,31 +24,31 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     clientSocket.send(heloCommand.encode())
     recv1 = clientSocket.recv(1024).decode()
     print(recv1)
-    if recv1[:3] != '250':
-        print('250 HELO reply not received from server.')
+    #if recv1[:3] != '250':
+    #    print('250 HELO reply not received from server.')
 
     # Send MAIL FROM command and print server response.
     # Fill in start
     mailFromCommand = ('MAIL From: Alice@nyu.edu')
     clientSocket.send(mailFromCommand.encode())
-    if recv1[:3] != '250':
-        print('250 MAIL FROM reply not received from server.')
+    #if recv1[:3] != '250':
+    #    print('250 MAIL FROM reply not received from server.')
     # Fill in end
 
     # Send RCPT TO command and print server response.
     # Fill in start
     rcptToCommand = ('RCPT To: mjp269@nyu.edu')
     clientSocket.send(rcptToCommand.encode())
-    if recv1[:3] != '250':
-        print('250 RCPT TO reply not received from server.')
+    #if recv1[:3] != '250':
+    #    print('250 RCPT TO reply not received from server.')
     # Fill in end
 
     # Send DATA command and print server response.
     # Fill in start
     dataCommand = ('DATA\r\n')
     clientSocket.send(dataCommand.encode())
-    if recv1[:3] != '250':
-        print('250 DATA reply not received from server.')
+    #if recv1[:3] != '250':
+    #    print('250 DATA reply not received from server.')
     # Fill in end
 
     # Send message data.
